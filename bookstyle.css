@@ -14,7 +14,7 @@
   
   .story-wrap{
     display: grid;
-    grid-template-rows: 10vh 80vh 10vh;
+    grid-template-rows: 5vh 85vh 10vh;
     grid-template-areas:
       "head-wrap"
       "body-wrap"
@@ -33,7 +33,7 @@
   .body-wrap{
     display: grid;
     grid-area:body-wrap;
-    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-columns: 5% 42.5% 42.5% 10%;
     grid-template-areas:
       "left-sidebar content-left content-right right-sidebar";
       overflow: hidden;
@@ -129,7 +129,6 @@
   .footer{
     grid-area: footer;
     background-color:#1d1d1d;
-    margin:30px;
   }
   a{
     color:#f5f7be;

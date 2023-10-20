@@ -21,13 +21,30 @@
     object-fit:cover;
   }
 
+  .text{
+    position: fixed;
+    text-align: center;
+    top: 20%;
+    left: 49%;
+    transform: translate(-50%, -50%);
+    color: rgb(143, 0, 0);
+    font-family: "ltr-beowolf-r23", serif;
+    font-weight: 400;
+    font-style: italic;
+    animation: fadeIn 8s;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
   .book{
     position: fixed;
-    top: 50%;
-    left: 50%;
-    height: 30vh;
-    width: 10vw;
-    /* background-color: red; */
-    transform: translate(-50%,-50%);
+    top: 53%;
+    left: 45%;
+    height: 10vh;
+    width: 8vw;
+    cursor: pointer;
   }
   
