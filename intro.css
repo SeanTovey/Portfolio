@@ -13,6 +13,9 @@
     height: 100vh;
     width:100vw;
     overflow: hidden;
+    animation: fadeInPicture ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   .welcome {
@@ -25,20 +28,18 @@
     position: fixed;
     text-align: center;
     top: 20%;
-    left: 49%;
+    left: 50%;
     transform: translate(-50%, -50%);
     color: rgb(143, 0, 0);
     font-family: "ltr-beowolf-r23", serif;
     font-weight: 400;
     font-style: italic;
-    animation: fadeIn 8s;
   }
 
-  @keyframes fadeIn {
+  @keyframes fadeInPicture {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
-
   .book{
     position: fixed;
     top: 53%;

@@ -5,16 +5,35 @@
     border: none;
     font-family:Georgia, 'Times New Roman', Times, serif;
   }
+  @font-face {
+    font-family:"AbhayaLibre-ExtraBold";
+    src: url(./fonts/AbhayaLibre-ExtraBold.ttf);
+    font-family:"AbhayaLibre-Regular";
+    src: url(./fonts/AbhayaLibre-Regular.ttf);
+    font-family:"Enriqueta-Medium";
+    src: url(./fonts/Enriqueta-Medium.ttf);
+  }
   
   body {
     background-color:#1d1d1d;
-    color:black;
+    color:rgb(49, 49, 49);
     font-size: 20px;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
   }
   
   .story-wrap{
     display: grid;
-    grid-template-rows: 5vh 85vh 10vh;
+    grid-template-rows: 5vh 85vh 5vh;
     grid-template-areas:
       "head-wrap"
       "body-wrap"
@@ -33,53 +52,132 @@
   .body-wrap{
     display: grid;
     grid-area:body-wrap;
-    grid-template-columns: 5% 42.5% 42.5% 10%;
+    grid-template-columns: 10% 80% 5%;
     grid-template-areas:
-      "left-sidebar content-left content-right right-sidebar";
-      overflow: hidden;
+      "left-sidebar content-middle right-sidebar";
+  }
+  .content-middle{
+    display: grid;
+    grid-area: content-middle;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+      "content-left content-right";
+    padding-bottom:20px;
+    background-color: #660000;
+    border-radius: 3px;
   }
   .content-left{
     grid-area: content-left;
-    background-color:#E6E3D3;
-    padding-bottom:20px;
+    background-image: url(./images/bookpleft.png);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .content-right{
     grid-area: content-right;
-    background-color:#E6E3D3;
-    padding-bottom:20px;
+    background-image: url(./images/bookpright.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+  }
+  .portfolio{
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100% 0%;
+    grid-template-areas: 
+      "top-picture" 
+      "bottom-picture";
+  }
+  .top-picture{
+    grid-area: top-picture;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+      "tl t tr" 
+      "l c r"
+      "bl b br";
+    justify-content: center;
+  }
+  .bottom-picture{
+    grid-area: bottom-picture;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: .5fr 4fr 1.5fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas: 
+      "tl t tr" 
+      "l c r"
+      "bl b br";
+  }
+  .caption{
+    grid-area: b;
+    text-align: center;
+    margin-top: 5px;
+    font-family: "Enriqueta-Medium";
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    color: #7a0000;
+  }
+  .caption:hover{
+    color:#4e0000;
+    cursor: pointer;
+  }
+  .icon{
+    grid-area: c;
+    aspect-ratio: 1;
+    height:100%;
+    background-color: #420000;
+    margin-left: auto;
+    margin-right: auto;
+    border: #1d1d1d;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .one{
+    background-image: url(./images/sunset.png);
+    background-size: cover;
+  }
+  .two{
+    background-image: url(./images/dome.png);
+    background-size: cover;
+  }
+  .three{
+    background-image: url(./images/face.png);
+    background-size: cover;
+  }
+  .four{
+    background-image: url(./images/city.png);
+    background-size: cover;
   }
   .header{
-    margin-top:10px;
+    margin-top:35%;
     text-align:center;
-    font-size: 30px;
+    font-size: 45px;
     font-weight:bold;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
+    font-family: "AbhayaLibre-ExtraBold";
+  }
+  .upper{
+    margin-top:5%;
   }
   .topic{
     font-weight:bold;
-    font-size:20px;
-  }
-  .portrait{
-    width:90px;
-    height:120px;
-    margin-left:10px;
-    margin-right:10px;
-    margin-bottom:10px;
-  }
-  .portrait>.portraitpic{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-style:solid;
-    border-width:5px;
-    border-color:black;
+    font-size:25px;
+    font-family: "Enriqueta-Medium";
   }
   .cardlesstext{
-    margin-left:50px;
+    width: 100%;
+    height: 100%;
   }
   .subheader{
-      margin-left:33%;
+      text-align: center;
       margin-bottom: 10px;
+      width: 100%;
     }
   .left-sidebar{
     grid-area: left-sidebar;
@@ -88,21 +186,42 @@
   .right-sidebar{
     grid-area: right-sidebar;
     background-color:#1d1d1d;
+    z-index: 0;
   }
   .travel{
-    width:125px;
-    height:50px;
-    text-align:center;
-    background-color:#c33c42;
-    padding-top:10px;
+    position:absolute;
+    left: 90%;
+    width:11%;
+    height:40px;
+    text-align:right;
+    background-color:#7a0000;
+    padding-top:6px;
+    padding-bottom: 10px;
+    padding-right: 10px;
     color:#f5f7be;
-    margin-top: 5px;
+    transform: translate(-40%);
+    border-radius: 0 15px 15px 0;
+    font-family: "Enriqueta-Medium";
+    z-index: -1;
   }
-  .travel a {
+  .travel1{
+    top:10%;
+  }
+  .travel2{
+    top:20%;
+  }
+  .travel3{
+    top:30%;
+  }
+  #clicked{
+    transform: translate(-25%);
+    background-color:#420000;
+  }
+  .travel a{
     display: block
   }
   .travel:hover{
-    background-color:#742427;
+    background-color:#5b0000;
     cursor:pointer;
   }
   .click{
@@ -129,39 +248,9 @@
   .footer{
     grid-area: footer;
     background-color:#1d1d1d;
-  }
-  a{
-    color:#f5f7be;
-    text-decoration: none;
-  }
-  a:hover{
-    color:#fffffe;
-    text-decoration: none;
+    z-index: -3;
+    position: relative;
   }
   p{
       margin-left: 50px;
-  }
-  .image-showcase{
-    height: 200px;
-    width: 300px;
-    margin:auto;
-    margin-top:30px;
-    color:#E6E3D3;
-  }
-  .image-showcase2{
-    height: 300px;
-    width: 200px;
-    margin:auto;
-    margin-top:30px;
-    color:#E6E3D3;
-  }
-  #image-showcase{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  #image-showcase2{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
   }
