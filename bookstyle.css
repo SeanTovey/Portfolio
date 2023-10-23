@@ -170,6 +170,16 @@
     font-size:25px;
     font-family: "Enriqueta-Medium";
   }
+  .paragraph{
+    font-weight: normal;
+    font-size: 16px;
+    margin-left: 6%;
+    margin-right: 20px;
+    margin-top: 5%;
+    text-align: left;
+    text-indent: 10%;
+    line-height: 1.5;
+  }
   .cardlesstext{
     width: 100%;
     height: 100%;
